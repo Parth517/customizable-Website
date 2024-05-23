@@ -1,16 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import mongoose from 'mongoose';
-
-const imageSchema = new mongoose.Schema({
-    url: String,
-    label: String,
-    caption: String
-});
-
-const Image = mongoose.model('Image', imageSchema);
-
-
+import Image from '../Models/imageModel.js';
 
 router.get('/', async(req, res) => {
     try{
