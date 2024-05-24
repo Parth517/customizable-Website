@@ -56,8 +56,8 @@ const EditSectionPage = () => {
         <h3>Select Section to Edit</h3>
         <ul>
           {Array.isArray(sections) && sections.length > 0 ? (
-            sections.map((section) => (
-              <li key={section._id} onClick={() => handleSectionSelect(section)}>{section.title}</li>
+            sections.map((section,index) => (
+              <li key={section._id} onClick={() => handleSectionSelect(section)}>{index+1},{section.title}</li>
             ))
           ) : (
             <p>Section not found</p>

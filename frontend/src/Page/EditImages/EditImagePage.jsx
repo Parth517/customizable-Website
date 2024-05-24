@@ -56,9 +56,9 @@ const EditImagePage = () => {
         <h3>Select Image to Edit</h3>
         <ul>
           {Array.isArray(images) && images.length > 0 ? (
-            images.map((image) => (
+            images.map((image,index) => (
               <li key={image._id} onClick={() => handleImageSelect(image)}>
-                {image.label}
+                {index + 1},{image.label}
               </li>
             ))
           ) : (
