@@ -6,11 +6,11 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import sectionRoutes from './routes/sectionRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import editImagesRoutes from './routes/editImageRoutes.js';
 
 dotenv.config();
 
 connectDB();
-
 
 const port =process.env.PORT ||5000; 
 const app=express()
@@ -28,6 +28,8 @@ app.use('/api/images',ImageRoute);
 app.use('/api/section',sectionRoutes);
 
 app.use('/api/auth', authRoutes);
+
+app.use('/api/edit-images',editImagesRoutes)
 
 app.use((req, res, next) => {
     console.log(`Incoming request: ${req.method} ${req.url}`);

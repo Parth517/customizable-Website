@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import './Comp.css'
+import { Col, Row, Container } from "react-bootstrap";
+import "./Comp.css";
 
 const Comp = () => {
-  const [htmlContents, setHtmlContents] = useState([]);
+  const [contents, setContents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -17,8 +18,7 @@ const Comp = () => {
         throw new Error("Failed to fetch data");
       }
       const data = await res.json();
-      const contents = data.map((item) => item.content);
-      setHtmlContents(contents);
+      setContents(data);
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -35,11 +35,19 @@ const Comp = () => {
   }
 
   return (
-    <div>
-      {htmlContents.map((content, index) => (
-        <div key={index} dangerouslySetInnerHTML={{ __html: content }} />
+    <Container fluid>
+      {contents.map((content, index) => (
+        <Row key={index} className="content-card mb-4">
+          <Col md={8} className="text-column">
+            <h3>{content.title}</h3>
+            <p>{content.content}</p>
+          </Col>
+          <Col md={4} className="image-column">
+            <img src={content.image} alt="Content" className="content-image" />
+          </Col>
+        </Row>
       ))}
-    </div>
+    </Container>
   );
 };
 

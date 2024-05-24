@@ -10,6 +10,7 @@ import {createBrowserRouter,
 import MainPags from './Page/MainPags.jsx';
 import LoginPage from './Page/login/LoginPage.jsx'
 import AdminPage from './Page/Admin/AdminPage.jsx';
+import EditImagePage from './Page/EditImages/EditImagePage.jsx';
 
 const isLoggedIn = () => {
   return localStorage.getItem('isLoggedIn') === 'true';
@@ -21,6 +22,7 @@ const router=createBrowserRouter(
       <Route index={true} path="/" element={<MainPags />}></Route>
       <Route path="/login" element={<LoginPage />}></Route>
       <Route path="/admin" element={isLoggedIn() ? <AdminPage /> : <Navigate to="/login" replace />} />
+      <Route path="/edit-images" element={isLoggedIn() ? <EditImagePage /> : <Navigate to="/login" replace />} />
     </Route>
   )
 )

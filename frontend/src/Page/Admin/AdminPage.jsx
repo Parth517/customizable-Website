@@ -1,20 +1,25 @@
 import { useNavigate } from 'react-router-dom';
+import { Button, Container } from 'react-bootstrap';
 
 const AdminPage = () => {
   const navigate = useNavigate();
 
+  const handleUpdate = () => {
+    navigate('/edit-images');
+  };
+
   const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn'); // Clear login state
-    navigate('/login'); // Redirect to login page
+    localStorage.removeItem('isLoggedIn');
+    navigate('/login');
   };
 
   return (
-    <div>
+    <Container className="mt-5">
       <h3>Admin Page</h3>
       <p>Welcome to the admin page!</p>
-      
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+      <Button onClick={handleUpdate} className="me-2">Update Carousel Image</Button>
+      <Button onClick={handleLogout} variant="danger">Logout</Button>
+    </Container>
   );
 };
 
