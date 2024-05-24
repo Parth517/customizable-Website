@@ -25,7 +25,9 @@ function Header() {
       <Nav className="me-auto">
         {isLoggedIn?(
           <>
-            <Nav.Link as={Link} to="/edit-images">Update</Nav.Link>
+            <Nav.Link as={Link} to="/admin">Admin Panel</Nav.Link>
+            <Nav.Link as={Link} to="/edit-images">Update Image</Nav.Link>
+            <Nav.Link as={Link} to="/edit-section">Update Section</Nav.Link>
             <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
           </>
         ):(

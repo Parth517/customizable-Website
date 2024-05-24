@@ -1,23 +1,14 @@
 import express from 'express'
-
+import Section from '../Models/sectionModel.js';
 const router=express.Router();
-import mongoose from "mongoose";
 
-const sectionSchema=new mongoose.Schema({
-    title: String,
-    content: String,
-    image: String,
+router.get('/', async (req, res) => {
+    try {
+        const sections = await Section.find();
+        res.json(sections);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 });
 
-const Section = mongoose.model('Section',sectionSchema)
-
-router.get('/',async(req,res)=>{
-    try{
-        const sections=await Section.find();
-        res.json(sections)
-    }catch(error){
-        res.status(400).json({error: error.message})
-    }
-})
-
-export default router
+export default router;

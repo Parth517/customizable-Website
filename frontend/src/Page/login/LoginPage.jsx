@@ -9,6 +9,7 @@ const Login = () => {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [isLoginChecked, setIsLoginChecked] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);  // New state for handling redirection
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const Login = () => {
     } else {
       setIsLoginChecked(true);
     }
-  }, [navigate]);
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -31,7 +32,11 @@ const Login = () => {
       setMessage(res.data.msg);
 
       localStorage.setItem('isLoggedIn', 'true');
-      navigate('/admin');
+      setLoading(false); // Hide loading spinner after response is received
+      setRedirecting(true); // Set redirecting state to true
+      setTimeout(() => {
+        navigate('/admin'); // Navigate to admin page after 3 seconds
+      }, 3000);
     } catch (err) {
       setMessage(err.response?.data?.msg || 'Login failed');
       setLoading(false); // Hide loading spinner if login fails
@@ -67,11 +72,12 @@ const Login = () => {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit" disabled={loading}>
+        <Button variant="primary" type="submit" disabled={loading || redirecting}>
           {loading ? <Spinner animation="border" size="sm" /> : 'Login'}
         </Button>
       </form>
       {message && <p>{message}</p>}
+      {redirecting && <Spinner animation="border" className="mt-3" />}
     </Container>
   );
 };

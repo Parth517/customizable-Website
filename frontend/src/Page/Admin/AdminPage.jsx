@@ -7,6 +7,9 @@ const AdminPage = () => {
   const handleUpdate = () => {
     navigate('/edit-images');
   };
+  const handleUpdateSection = () => {
+    navigate('/edit-section');
+  };
 
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
@@ -18,6 +21,7 @@ const AdminPage = () => {
       <h3>Admin Page</h3>
       <p>Welcome to the admin page!</p>
       <Button onClick={handleUpdate} className="me-2">Update Carousel Image</Button>
+      <Button onClick={handleUpdateSection} className="me-2">Update Section</Button>
       <Button onClick={handleLogout} variant="danger">Logout</Button>
     </Container>
   );
