@@ -26,6 +26,8 @@ function Header() {
         {isLoggedIn?(
           <>
             <Nav.Link as={Link} to="/admin">Admin Panel</Nav.Link>
+            <Nav.Link as={Link} to="/add-image">Add Image</Nav.Link>
+            <Nav.Link as={Link} to="/add-section">Add Section</Nav.Link>
             <Nav.Link as={Link} to="/edit-images">Update Image</Nav.Link>
             <Nav.Link as={Link} to="/edit-section">Update Section</Nav.Link>
             <Nav.Link onClick={handleLogout}>Logout</Nav.Link>

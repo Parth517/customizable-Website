@@ -18,7 +18,6 @@ router.post('/:id', async (req, res) => {
       url,
       label,
       caption,
-      sectionId: id  // Assuming you want to store the section ID with the image
     });
 
     const savedImage = await newImage.save();

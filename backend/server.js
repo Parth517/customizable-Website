@@ -9,6 +9,7 @@ import authRoutes from './routes/authRoutes.js';
 import editImagesRoutes from './routes/editImageRoutes.js';
 import editsectionRoutes from './routes/editsectionRoute.js';
 import addImagesRoutes from './routes/addImageRoutes.js';
+import addSectionRoutes from './routes/addSectionRoutes.js'
 
 dotenv.config();
 
@@ -36,6 +37,8 @@ app.use('/api/edit-images',editImagesRoutes)
 app.use('/api/edit-section',editsectionRoutes)
 
 app.use('/api/add-images',addImagesRoutes);
+
+app.use('/api/add-section',addSectionRoutes)
 
 app.use((req, res, next) => {
     console.log(`Incoming request: ${req.method} ${req.url}`);
