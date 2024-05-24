@@ -12,6 +12,7 @@ import LoginPage from './Page/login/LoginPage.jsx'
 import AdminPage from './Page/Admin/AdminPage.jsx';
 import EditImagePage from './Page/EditImages/EditImagePage.jsx';
 import EditSectionPage from './Page/EditSection/EditSectionPage.jsx';
+import AddImagePage from './Page/AddImage/AddImagePage.jsx';
 
 const isLoggedIn = () => {
   return localStorage.getItem('isLoggedIn') === 'true';
@@ -25,6 +26,7 @@ const router=createBrowserRouter(
       <Route path="/admin" element={isLoggedIn() ? <AdminPage /> : <Navigate to="/login" replace />}></Route>
       <Route path="/edit-images" element={isLoggedIn() ? <EditImagePage /> : <Navigate to="/login" replace />}></Route>
       <Route path="/edit-section" element={isLoggedIn() ? <EditSectionPage />: <Navigate to="/login" replace />}></Route>
+      <Route path="/add-image" element={isLoggedIn() ? <AddImagePage />: <Navigate to="/login" replace />}></Route>
     </Route>
   )
 )
