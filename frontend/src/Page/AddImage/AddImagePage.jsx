@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Form, Button, Container } from 'react-bootstrap';
 
 // eslint-disable-next-line react/prop-types
 const AddImagePage = ({ id }) => {
@@ -28,28 +29,28 @@ const AddImagePage = ({ id }) => {
   };
 
   return (
-    <div>
+    <Container>
       <h2>Add Image</h2>
       {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <label>
-          URL:
-          <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} required />
-        </label>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formUrl">
+          <Form.Label>URL:</Form.Label>
+          <Form.Control type="text" value={url} onChange={(e) => setUrl(e.target.value)} required />
+        </Form.Group>
+        <Form.Group controlId="formLabel">
+          <Form.Label>Label:</Form.Label>
+          <Form.Control type="text" value={label} onChange={(e) => setLabel(e.target.value)} required />
+        </Form.Group>
+        <Form.Group controlId="formCaption">
+          <Form.Label>Caption:</Form.Label>
+          <Form.Control type="text" value={caption} onChange={(e) => setCaption(e.target.value)} required />
+        </Form.Group>
         <br />
-        <label>
-          Label:
-          <input type="text" value={label} onChange={(e) => setLabel(e.target.value)} required />
-        </label>
+        <Button variant="primary" type="submit">Add Image</Button>
         <br />
-        <label>
-          Caption:
-          <input type="text" value={caption} onChange={(e) => setCaption(e.target.value)} required />
-        </label>
-        <br />
-        <button type="submit">Add Image</button>
-      </form>
-    </div>
+      </Form>
+      <br />
+    </Container>
   );
 };
 

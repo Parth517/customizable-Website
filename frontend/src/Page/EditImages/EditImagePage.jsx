@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Container, Row, Col, Form, Button, Alert, ListGroup } from 'react-bootstrap';
 
 const EditImagePage = () => {
   const [images, setImages] = useState([]);
@@ -13,7 +14,7 @@ const EditImagePage = () => {
     const fetchImages = async () => {
       try {
         const res = await axios.get('http://localhost:8080/api/images');
-        console.log('Fetched images:', res.data); // Log the response data
+        console.log('Fetched images:', res.data);
         if (Array.isArray(res.data)) {
           setImages(res.data);
         } else {
@@ -49,45 +50,63 @@ const EditImagePage = () => {
   };
 
   return (
-    <>
+    <Container className="mt-5">
       <h2>Edit Images</h2>
-      {message && <p>{message}</p>}
-      <div>
-        <h3>Select Image to Edit</h3>
-        <ul>
-          {Array.isArray(images) && images.length > 0 ? (
-            images.map((image,index) => (
-              <li key={image._id} onClick={() => handleImageSelect(image)}>
-                {index + 1},{image.label}
-              </li>
-            ))
-          ) : (
-            <p>No images found</p>
+      {message && <Alert variant={message.includes('successfully') ? 'success' : 'danger'}>{message}</Alert>}
+      <Row>
+        <Col md={4}>
+          <h3>Select Image to Edit</h3>
+          <ListGroup>
+            {Array.isArray(images) && images.length > 0 ? (
+              images.map((image, index) => (
+                <ListGroup.Item key={image._id} action onClick={() => handleImageSelect(image)}>
+                  {index + 1}. {image.label}
+                </ListGroup.Item>
+              ))
+            ) : (
+              <p>No images found</p>
+            )}
+          </ListGroup>
+        </Col>
+        <Col md={8}>
+          {selectedImage && (
+            <Form className="mt-3">
+              <h3>Edit Image</h3>
+              <Form.Group className="mb-3" controlId="formUrl">
+                <Form.Label>URL</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  placeholder="Enter image URL"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formLabel">
+                <Form.Label>Label</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={label}
+                  onChange={(e) => setLabel(e.target.value)}
+                  placeholder="Enter image label"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formCaption">
+                <Form.Label>Caption</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={caption}
+                  onChange={(e) => setCaption(e.target.value)}
+                  placeholder="Enter image caption"
+                />
+              </Form.Group>
+              <Button variant="primary" onClick={handleUpdate}>
+                Update Image
+              </Button>
+            </Form>
           )}
-        </ul>
-      </div>
-      {selectedImage && (
-        <div>
-          <h3>Edit Image</h3>
-          <label>
-            URL:
-            <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
-          </label>
-          <br />
-          <label>
-            Label:
-            <input type="text" value={label} onChange={(e) => setLabel(e.target.value)} />
-          </label>
-          <br />
-          <label>
-            Caption:
-            <input type="text" value={caption} onChange={(e) => setCaption(e.target.value)} />
-          </label>
-          <br />
-          <button onClick={handleUpdate}>Update Image</button>
-        </div>
-      )}
-    </>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

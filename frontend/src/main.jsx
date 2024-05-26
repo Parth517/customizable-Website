@@ -14,6 +14,10 @@ import EditImagePage from './Page/EditImages/EditImagePage.jsx';
 import EditSectionPage from './Page/EditSection/EditSectionPage.jsx';
 import AddImagePage from './Page/AddImage/AddImagePage.jsx';
 import AddSectionPage from './Page/AddSection/AddSectionPage.jsx';
+import AddCardPage from './Page/Card/AddCardPage.jsx';
+import EditCardPage from './Page/Card/EditCardPage.jsx'
+import DeleteCardPage from './Page/Card/DeleteCardPage.jsx';
+
 
 const isLoggedIn = () => {
   return localStorage.getItem('isLoggedIn') === 'true';
@@ -29,6 +33,9 @@ const router=createBrowserRouter(
       <Route path="/edit-section" element={isLoggedIn() ? <EditSectionPage />: <Navigate to="/login" replace />}></Route>
       <Route path="/add-image" element={isLoggedIn() ? <AddImagePage />: <Navigate to="/login" replace />}></Route>
       <Route path="/add-section" element={isLoggedIn() ? <AddSectionPage />: <Navigate to="/login" replace />}></Route>
+      <Route path="/add-card" element={isLoggedIn() ? <AddCardPage />: <Navigate to="/login" replace />}></Route>
+      <Route path="/edit-cards" element={isLoggedIn() ? <EditCardPage />: <Navigate to="/login" replace />}></Route>
+      <Route path="/delete-cards" element={isLoggedIn() ? <DeleteCardPage />: <Navigate to="/login" replace />}></Route>
     </Route>
   )
 )

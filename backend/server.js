@@ -10,6 +10,11 @@ import editImagesRoutes from './routes/editImageRoutes.js';
 import editsectionRoutes from './routes/editsectionRoute.js';
 import addImagesRoutes from './routes/addImageRoutes.js';
 import addSectionRoutes from './routes/addSectionRoutes.js'
+import cardSectionRoutes from './routes/cardSectionRoutes.js'
+import addCardRoutes from './routes/addCardRoutes.js'
+import editCardRoutes from './routes/editCardRoutes.js'
+import deleteCardRoutes from './routes/deleteCardRoutes.js'
+import deleteSectionRoutes from './routes/deleteSectionRoutes.js'; 
 
 dotenv.config();
 
@@ -26,19 +31,30 @@ app.get('/',(req,res)=>{
     res.send("Api is running")
 })
 
-app.use('/api/images',ImageRoute);
-
-app.use('/api/section',sectionRoutes);
-
 app.use('/api/auth', authRoutes);
+
+app.use('/api/images',ImageRoute);
 
 app.use('/api/edit-images',editImagesRoutes)
 
-app.use('/api/edit-section',editsectionRoutes)
+app.use('/api/section',sectionRoutes);
 
 app.use('/api/add-images',addImagesRoutes);
 
-app.use('/api/add-section',addSectionRoutes)
+app.use('/api/add-section',addSectionRoutes);
+
+app.use('/api/edit-section',editsectionRoutes)
+
+app.use('/api/cards',cardSectionRoutes);
+
+app.use('/api/add-cards',addCardRoutes);
+
+app.use('/api/edit-cards',editCardRoutes);
+
+app.use('/api/delete-cards', deleteCardRoutes);
+
+app.use('/api/delete-section', deleteSectionRoutes);
+
 
 app.use((req, res, next) => {
     console.log(`Incoming request: ${req.method} ${req.url}`);

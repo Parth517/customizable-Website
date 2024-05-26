@@ -3,7 +3,6 @@ const router=express.Router();
 import Section from '../Models/sectionModel.js'
 import dotenv from 'dotenv';
 
-
 dotenv.config()
 
 router.post('/:id',async (req,res)=>{

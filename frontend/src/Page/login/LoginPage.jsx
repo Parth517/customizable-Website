@@ -34,9 +34,8 @@ const Login = () => {
       localStorage.setItem('isLoggedIn', 'true');
       setLoading(false); // Hide loading spinner after response is received
       setRedirecting(true); // Set redirecting state to true
-      setTimeout(() => {
         navigate('/admin'); // Navigate to admin page after 3 seconds
-      }, 3000);
+      
     } catch (err) {
       setMessage(err.response?.data?.msg || 'Login failed');
       setLoading(false); // Hide loading spinner if login fails
@@ -72,12 +71,15 @@ const Login = () => {
             required
           />
         </Form.Group>
+        <br />
         <Button variant="primary" type="submit" disabled={loading || redirecting}>
           {loading ? <Spinner animation="border" size="sm" /> : 'Login'}
         </Button>
-      </form>
+        <br/>
+      </form><br/>
       {message && <p>{message}</p>}
       {redirecting && <Spinner animation="border" className="mt-3" />}
+      <br />
     </Container>
   );
 };

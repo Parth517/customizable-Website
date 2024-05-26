@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Button, Container } from 'react-bootstrap';
+import { Card, Container, Row, Col } from 'react-bootstrap';
 
 const AdminPage = () => {
   const navigate = useNavigate();
@@ -10,12 +10,19 @@ const AdminPage = () => {
   const handleUpdateSection = () => {
     navigate('/edit-section');
   };
-  const handleAddImage=()=>{
+  const handleAddImage = () => {
     navigate('/add-image');
+  };
+  const handleAddSection = () => {
+    navigate('/add-section');
+  };
+
+  const handleAddCard=()=>{
+    navigate('/add-card')
   }
 
-  const handleAddSection=()=>{
-    navigate('/add-section');
+  const handleUpdateCard=()=>{
+    navigate('/edit-cards')
   }
 
   const handleLogout = () => {
@@ -27,11 +34,69 @@ const AdminPage = () => {
     <Container className="mt-5">
       <h3>Admin Page</h3>
       <p>Welcome to the admin page!</p>
-      <Button onClick={handleUpdate} className="me-2">Update Carousel Image</Button>
-      <Button onClick={handleAddImage} className="me-2">Add Carousel Image</Button>
-      <Button onClick={handleUpdateSection} className="me-2">Update Section</Button>
-      <Button onClick={handleAddSection} className="me-2">Add Section</Button>
-      <Button onClick={handleLogout} variant="danger">Logout</Button>
+      <Row>
+        <Col md={6} lg={4}>
+          <Card onClick={handleAddImage} className="mb-4" style={{ cursor: 'pointer' }}>
+            <Card.Body>
+              <Card.Title>Add Carousel Image</Card.Title>
+              <Card.Text>Click here to add a new carousel image.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={6} lg={4}>
+          <Card onClick={handleAddSection} className="mb-4" style={{ cursor: 'pointer' }}>
+            <Card.Body>
+              <Card.Title>Add Section</Card.Title>
+              <Card.Text>Click here to add a new section.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={6} lg={4}>
+          <Card onClick={handleAddCard} className="mb-4" style={{ cursor: 'pointer' }}>
+            <Card.Body>
+              <Card.Title>Add Card</Card.Title>
+              <Card.Text>Click here to add a new card.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={6} lg={4}>
+          <Card onClick={handleUpdate} className="mb-4" style={{ cursor: 'pointer' }}>
+            <Card.Body>
+              <Card.Title>Update Carousel Image</Card.Title>
+              <Card.Text>Click here to update carousel images.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={6} lg={4}>
+          <Card onClick={handleUpdateSection} className="mb-4" style={{ cursor: 'pointer' }}>
+            <Card.Body>
+              <Card.Title>Update Section</Card.Title>
+              <Card.Text>Click here to update sections.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        
+        <Col md={6} lg={4}>
+          <Card onClick={handleUpdateCard} className="mb-4" style={{ cursor: 'pointer' }}>
+            <Card.Body>
+              <Card.Title>Update Card</Card.Title>
+              <Card.Text>Click here to update cards.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={6} lg={4}>
+          <Card onClick={handleLogout} className="mb-4" style={{ cursor: 'pointer' }} bg="danger" text="white">
+            <Card.Body>
+              <Card.Title>Logout</Card.Title>
+              <Card.Text>Click here to log out of the admin panel.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   );
 };
