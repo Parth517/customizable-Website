@@ -36,7 +36,7 @@ function Header() {
                 <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
               </>
             ) : (
-              <Nav.Link as={Link} to="/login">Login</Nav.Link>
+              <h1></h1>
             )}
           </Nav>
         </Navbar.Collapse>

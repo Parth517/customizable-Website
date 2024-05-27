@@ -25,6 +25,18 @@ const AdminPage = () => {
     navigate('/edit-cards')
   }
 
+  const handleDeleteSection=()=>{
+    navigate('/delete-section')
+  }
+
+  const handleDeleteCard=()=>{
+    navigate('/delete-cards')
+  }
+
+  const handleDeleteImage=()=>{
+    navigate('/delete-images')
+  }
+
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
     navigate('/login');
@@ -84,6 +96,33 @@ const AdminPage = () => {
             <Card.Body>
               <Card.Title>Update Card</Card.Title>
               <Card.Text>Click here to update cards.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={6} lg={4}>
+          <Card onClick={handleDeleteSection} className="mb-4" style={{ cursor: 'pointer' }}>
+            <Card.Body>
+              <Card.Title>Delete Section</Card.Title>
+              <Card.Text>Click here to delete section.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={6} lg={4}>
+          <Card onClick={handleDeleteCard} className="mb-4" style={{ cursor: 'pointer' }}>
+            <Card.Body>
+              <Card.Title>Delete Card</Card.Title>
+              <Card.Text>Click here to delete card.</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md={6} lg={4}>
+          <Card onClick={handleDeleteImage} className="mb-4" style={{ cursor: 'pointer' }}>
+            <Card.Body>
+              <Card.Title>Delete Image</Card.Title>
+              <Card.Text>Click here to delete image.</Card.Text>
             </Card.Body>
           </Card>
         </Col>

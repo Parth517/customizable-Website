@@ -9,7 +9,7 @@ const Login = () => {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [isLoginChecked, setIsLoginChecked] = useState(false);
-  const [redirecting, setRedirecting] = useState(false);  // New state for handling redirection
+  const [redirecting, setRedirecting] = useState(false);  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading spinner on login attempt
+    setLoading(true); 
     try {
       const res = await axios.post('http://localhost:8080/api/auth/login', {
         username,
@@ -32,13 +32,13 @@ const Login = () => {
       setMessage(res.data.msg);
 
       localStorage.setItem('isLoggedIn', 'true');
-      setLoading(false); // Hide loading spinner after response is received
-      setRedirecting(true); // Set redirecting state to true
-        navigate('/admin'); // Navigate to admin page after 3 seconds
+      setLoading(false);
+      setRedirecting(true); 
+        navigate('/admin'); 
       
     } catch (err) {
       setMessage(err.response?.data?.msg || 'Login failed');
-      setLoading(false); // Hide loading spinner if login fails
+      setLoading(false); 
     }
   };
 

@@ -17,6 +17,8 @@ import AddSectionPage from './Page/AddSection/AddSectionPage.jsx';
 import AddCardPage from './Page/Card/AddCardPage.jsx';
 import EditCardPage from './Page/Card/EditCardPage.jsx'
 import DeleteCardPage from './Page/Card/DeleteCardPage.jsx';
+import DeleteSectionPage from './Page/DeleteSection/DeleteSectionPage.jsx';
+import DeleteImagePage from './Page/DeleteImage/DeleteImagePage.jsx';
 
 
 const isLoggedIn = () => {
@@ -36,6 +38,8 @@ const router=createBrowserRouter(
       <Route path="/add-card" element={isLoggedIn() ? <AddCardPage />: <Navigate to="/login" replace />}></Route>
       <Route path="/edit-cards" element={isLoggedIn() ? <EditCardPage />: <Navigate to="/login" replace />}></Route>
       <Route path="/delete-cards" element={isLoggedIn() ? <DeleteCardPage />: <Navigate to="/login" replace />}></Route>
+      <Route path="/delete-section" element={isLoggedIn() ? <DeleteSectionPage />: <Navigate to="/login" replace />}></Route>
+      <Route path="/delete-images" element={isLoggedIn() ? <DeleteImagePage />: <Navigate to="/login" replace />}></Route>
     </Route>
   )
 )

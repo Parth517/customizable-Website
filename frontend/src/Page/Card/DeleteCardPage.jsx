@@ -24,13 +24,16 @@ const DeleteCardPage = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    try {
-      await axios.delete(`http://localhost:8080/api/delete-cards/${id}`);
-      setMessage('Card deleted successfully');
-      setCards(cards.filter(card => card._id !== id));
-    } catch (error) {
-      console.error('Error deleting card', error);
-      setMessage('Failed to delete card');
+    const confirmDelete = window.confirm("Are you sure you want to delete this card?");
+    if (confirmDelete) {
+      try {
+        await axios.delete(`http://localhost:8080/api/delete-cards/${id}`);
+        setMessage('Card deleted successfully');
+        setCards(cards.filter(card => card._id !== id));
+      } catch (error) {
+        console.error('Error deleting card', error);
+        setMessage('Failed to delete card');
+      }
     }
   };
 
