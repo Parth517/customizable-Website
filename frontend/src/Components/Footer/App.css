@@ -1,26 +1,61 @@
-.dark-gray-footer {
-    background-color: darkgray !important;
-    color: white !important;
-  }
-  
-  .dark-gray-footer a,
-  .dark-gray-footer p {
-    color: white !important;
-  }
-  
-  .dark-gray-navbar {
-    background-color: darkgray !important;
-  }
-  
-  .dark-gray-navbar .nav-link {
-    color: #ccc !important; /* Default color */
-    transition: color 0.3s ease; /* Smooth transition */
-  }
-  
-  .dark-gray-navbar .nav-link:hover {
-    color: white !important; /* Color on hover */
-  }
-  
-  .dark-gray-navbar .nav-link.logout-link:hover {
-    color: red !important; /* Red color on hover for logout */
-  }
+.footer {
+  background-color: #343a40;
+  color: white; 
+  padding: 1rem 0; 
+}
+
+.footer p, .footer a {
+  color: white;
+}
+
+.footer a:hover {
+  color: #adb5bd; 
+}
+
+.btn-primary {
+  border: none; 
+}
+
+.btn-primary.btn-floating {
+  color: white; 
+}
+
+.btn-primary.btn-floating:hover {
+  background-color: #495057; 
+}
+
+
+#Insta:hover {
+  background-color: #E1306C !important;
+}
+
+#Twitter:hover {
+  background-color: black !important;
+}
+
+#Youtube:hover {
+  background-color: red !important;
+}
+
+
+
+.footer-nav {
+  list-style: none; 
+  padding: 0;
+  display: flex; 
+  justify-content: center;
+  gap: 30px; 
+}
+
+.footer-nav li {
+  margin: 0;
+}
+
+.footer-nav a {
+  color: white; 
+  text-decoration: none; 
+}
+
+.footer-nav a:hover {
+  color: #adb5bd; 
+}

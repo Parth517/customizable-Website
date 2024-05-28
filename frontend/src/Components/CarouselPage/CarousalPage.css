@@ -1,9 +1,8 @@
 
-/* CarousalPage.css */
 .carousel-img {
     width: 100%;
     height: auto;
-    max-height: 300px; /* Optional: Limit max height */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
+    max-height: 500px; 
+    object-fit: cover; 
   }
   

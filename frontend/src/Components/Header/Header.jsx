@@ -2,13 +2,31 @@ import { Nav, Navbar, Container } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const loggedIn = localStorage.getItem('isLoggedIn');
     setIsLoggedIn(loggedIn === 'true');
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleLogout = () => {
@@ -18,14 +36,21 @@ function Header() {
   };
 
   return (
-    <Navbar className="dark-gray-navbar" data-bs-theme="dark" expand="lg">
+    <Navbar
+      className={`dark-gray-navbar ${scrolling ? 'scrolled' : ''}`}
+      data-bs-theme="dark"
+      expand="lg"
+      fixed="top"
+    >
       <Container>
         <Navbar.Brand href="/">
-         Brand
+          Brand
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
+            <Nav.Link as={Link} to="">About Us</Nav.Link>
+            <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
             {isLoggedIn ? (
               <>
                 <Nav.Link as={Link} to="/admin">Admin Panel</Nav.Link>

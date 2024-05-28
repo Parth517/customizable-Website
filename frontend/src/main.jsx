@@ -19,6 +19,7 @@ import EditCardPage from './Page/Card/EditCardPage.jsx'
 import DeleteCardPage from './Page/Card/DeleteCardPage.jsx';
 import DeleteSectionPage from './Page/DeleteSection/DeleteSectionPage.jsx';
 import DeleteImagePage from './Page/DeleteImage/DeleteImagePage.jsx';
+import ContactUs from './Components/Contact/ContactUs.jsx';
 
 
 const isLoggedIn = () => {
@@ -29,6 +30,7 @@ const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<MainPags />}></Route>
+      <Route path="/contact" element={<ContactUs />}></Route>
       <Route path="/login" element={<LoginPage />}></Route>
       <Route path="/admin" element={isLoggedIn() ? <AdminPage /> : <Navigate to="/login" replace />}></Route>
       <Route path="/edit-images" element={isLoggedIn() ? <EditImagePage /> : <Navigate to="/login" replace />}></Route>
