@@ -1,5 +1,9 @@
 img.cltest {
-    margin-left: 50px;
-    margin-top: 10px;
-  }
+  margin-left: 50px;
+  margin-top: -450px;
+}
 
+.my-5 {
+  margin-top: -50px !important;
+  margin-bottom: 3rem !important;
+}

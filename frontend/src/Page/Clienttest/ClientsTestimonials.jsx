@@ -5,18 +5,17 @@ import {
   MDBRow,
   MDBCol,
 } from "mdb-react-ui-kit";
-
-import './ClientsTestimonials'
+import './ClientsTestimonials.css';
 
 export default function ClientsTestimonials() {
   return (
     <>
-    <img src="https://i.ibb.co/tXrvQMQ/Capture.png" className="cltest"/>
+      <img src="https://i.ibb.co/tXrvQMQ/Capture.png" className="testimonial-image" />
       <MDBContainer className="my-5">
         <MDBCarousel showControls dark>
           <MDBCarouselItem className="active text-center">
             <MDBRow className="d-flex justify-content-center">
-              <MDBCol lg="8">
+              <MDBCol lg="8" md="10" sm="12">
                 <p className="text-muted">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
                   et deleniti nesciunt sint eligendi reprehenderit reiciendis,
@@ -37,7 +36,7 @@ export default function ClientsTestimonials() {
 
           <MDBCarouselItem className="text-center">
             <MDBRow className="d-flex justify-content-center">
-              <MDBCol lg="8">
+              <MDBCol lg="8" md="10" sm="12">
                 <p className="text-muted">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
                   et deleniti nesciunt sint eligendi reprehenderit reiciendis.

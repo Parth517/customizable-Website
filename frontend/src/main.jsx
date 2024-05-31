@@ -20,6 +20,9 @@ import ContactUs from './Components/Contact/ContactUs.jsx';
 import AboutUs from './Components/About/AboutUs.jsx';
 import FirstAdPage from './Page/FirstAd/FirstAdPage.jsx';
 import NewPage from './Page/NewEdit/NewPage.jsx';
+import ImageCollage from './Page/ImageCollage/ImageCollage.jsx';
+import OurProjects from './Page/OurProjects/OurProjects.jsx';
+
 
 const isLoggedIn = () => {
   return localStorage.getItem('isLoggedIn') === 'true';
@@ -34,6 +37,9 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LoginPage />} />
       <Route path="/ad" element={<FirstAdPage />} />
       <Route path="/new" element={<NewPage />} />
+      <Route path="/img" element={<ImageCollage />} />
+      <Route path="/ourproject" element={<OurProjects />} />
+      
       
       <Route path="/admin" element={isLoggedIn() ? <AdminPage /> : <Navigate to="/login" replace />} />
       <Route path="/edit-images" element={isLoggedIn() ? <EditImagePage /> : <Navigate to="/login" replace />} />

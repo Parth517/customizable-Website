@@ -4,8 +4,9 @@ import BigCard from './BigCard'
 import ClientsTestimonials from './Clienttest/ClientsTestimonials'
 import Comp from './Comp'
 import './MainPags.css'
-import {Container} from 'react-bootstrap'
 import NewPage from '../Page/NewEdit/NewPage.jsx'
+import OurProjects from './OurProjects/OurProjects.jsx';
+
 
 
 const MainPags = () => {
@@ -16,6 +17,7 @@ const MainPags = () => {
       <Comp />
       <NewPage />
       <CardDisplayPage />
+      <OurProjects />
       <ClientsTestimonials />
     </>
   )

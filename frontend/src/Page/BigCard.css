@@ -1,10 +1,13 @@
 .big-card {
     display: flex;
     align-items: center;
-    margin:10px;
+    margin:10px 40px;
     border-style: none;
     background-color:#ffb347;
-
+    transition: transform 0.3s ease-in-out
+}
+.big-card:hover {
+    transform: translateY(-10px);
 }
 
 .big-card .big-card-image-column {

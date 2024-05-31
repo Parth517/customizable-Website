@@ -36,17 +36,40 @@ const Comp = () => {
 
   return (
     <Container fluid>
-      {contents.map((content, index) => (
-        <Row key={index} className={`content-card mb-4 ${index % 2 === 0 ? 'even' : 'odd'}`}>
-          <Col md={4} className={`image-column ${index % 2 === 0 ? 'order-md-2' : 'order-md-1'}`}>
-            <img src={content.image} alt="Content" className="content-image" />
-          </Col>
-          <Col md={8} className={`text-column ${index % 2 === 0 ? 'order-md-1' : 'order-md-2'}`}>
-            <h3>{content.title}</h3>
-            <p>{content.content}</p>
-          </Col>
-        </Row>
-      ))}
+      {contents.map((content, index) => {
+        const isEven = index % 2 === 0;
+        const dynamicStyles = {
+          maxWidth: '60%',
+          marginLeft: isEven ? '0px' : '-140px', // Corrected camelCase and value
+          height: 'auto',
+        };
+
+        return (
+          <Row key={index} className={`content-card mb-4 ${isEven ? 'even' : 'odd'}`}>
+            {isEven ? (
+              <>
+                <Col md={8} className="text-column">
+                  <h3>{content.title}</h3>
+                  <p>{content.content}</p>
+                </Col>
+                <Col md={4} className="image-column">
+                  <img src={content.image} alt="Content" className="content-image" style={dynamicStyles} />
+                </Col>
+              </>
+            ) : (
+              <>
+                <Col md={4} className="image-column">
+                  <img src={content.image} alt="Content" className="content-image" style={dynamicStyles} />
+                </Col>
+                <Col md={8} className="text-column">
+                  <h3>{content.title}</h3>
+                  <p>{content.content}</p>
+                </Col>
+              </>
+            )}
+          </Row>
+        );
+      })}
     </Container>
   );
 };

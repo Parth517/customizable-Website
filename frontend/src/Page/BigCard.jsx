@@ -5,7 +5,7 @@ const BigCard = () => {
   return (
     <>
       <Card className="big-card mb-4">
-        <Row noGutters>
+        <Row nogutters="true">
           <Col md={5} className="big-card-image-column">
             <img
               src="https://i.ibb.co/CmsJ0LZ/advertisement-586132-1280.jpg"

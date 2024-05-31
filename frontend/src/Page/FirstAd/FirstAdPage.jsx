@@ -10,14 +10,15 @@ const FirstAdPage = () => {
       <Container className="newContain">
         <Row className="section2">
           <Col md={4} className="leftCol">
-            <h2 className="head1">WE CREATE MASS PUBLIC'S EYE</h2>
+            <h2 className="head1">WE CAPTURE THE PUBLIC'S</h2>
             <h2 className="head2">ATTENTION</h2>
           </Col>
           <Col md={7} >
             <p className="rightCol">
-              We are a value-driven organization. Our core values inspire us to
-              push our boundaries and set benchmarks for others and have them
-              believe that our organization is top class.
+            We are a value-driven organization. Our core values 
+            inspire us to push our boundaries, set benchmarks for 
+            others, and make them believe that our organization is 
+            top-class.
             </p>
             <div className="h5Container">
               <div>

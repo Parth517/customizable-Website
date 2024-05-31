@@ -8,7 +8,9 @@
   
   .navbar-brand{
     color:#ffb347 !important;
-    font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L",
+    font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L";
+    font-weight: 700;
+    font-size: 2.25 rem !important;
 
   }
 

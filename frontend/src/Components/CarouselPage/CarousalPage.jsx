@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import './CarousalPage.css';
 import axios from 'axios';
+import FirstAdPage from '../../Page/FirstAd/FirstAdPage'
 
 const CarousalPage = () => {
   const [images, setImages] = useState([]);
@@ -19,9 +20,6 @@ const CarousalPage = () => {
   return (
     <>
       <Carousel>
-        <Carousel.Item>
-          <FirstAdPage /> {/* Add FirstAdPage as the first carousel item */}
-        </Carousel.Item>
         {images.map((image, index) => (
           <Carousel.Item key={index}>
             <img
@@ -36,6 +34,9 @@ const CarousalPage = () => {
           </Carousel.Item>
         ))}
       </Carousel>
+      <FirstAdPage />
+      <br />
+      <br />
     </>
   );
 };
