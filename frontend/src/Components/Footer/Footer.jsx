@@ -1,16 +1,19 @@
 import "./App.css"; // Ensure to import your CSS file
 import "@fortawesome/fontawesome-free/css/all.css";
 import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import ScrollToTop from "../ScrollToTop";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="footer text-center">
       <div className="container p-4">
+        <ScrollToTop />
         <ul className="footer-nav mb-3">
-        <li><a href="/">Home</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/about">About</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+        <li><Link to="/about">About</Link></li>
         </ul>
         <section className="mb-4">
           <p>

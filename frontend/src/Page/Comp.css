@@ -3,11 +3,12 @@
   flex-wrap: wrap;
   background-color: #f8f9fa;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin:30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.text-column {
+.content-card .text-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,22 +16,22 @@
   line-height: 1.4; /* Adjust line height if needed */
 }
 
-.text-column h3 {
+.content-card .text-column h3 {
   font-size: 1.2rem; /* Adjust heading size */
   margin-bottom: 0.5rem;
 }
 
-.text-column p {
-  font-size: 0.75rem; 
+.content-card .text-column p {
+  font-size: 0.75rem;
 }
 
-.image-column {
+.content-card .image-column {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.content-image {
+.content-card .content-image {
   max-width: 65%;
   height: 80%;
   border-radius: 5px;

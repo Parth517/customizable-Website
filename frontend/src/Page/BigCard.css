@@ -1,0 +1,25 @@
+.big-card {
+    display: flex;
+    align-items: center;
+    margin:10px;
+    border-style: none;
+    background-color:#ffb347;
+
+}
+
+.big-card .big-card-image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-card .big-card-content-image {
+    width: 100%;
+    height: auto;
+}
+
+.big-card .big-card-text-column {
+    padding: 1rem; 
+    color:white;
+    font-family: 'Roboto'
+}

@@ -1,0 +1,94 @@
+.row{
+    display: ruby !important;
+  }
+  .custom-card {
+    position: relative;
+    margin-left: 30px;
+    width: 20%; /* Adjust card width as needed */
+    height: 420px; /* Adjust card height as needed */
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth hover effect */
+  }
+  
+  .card {
+    padding: 0px;
+  }
+  
+  .justify-content-between {
+    justify-content: center !important;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.1); /* Enlarge card on hover by 110% */
+  }
+  
+  .custom-card .card-img {
+    height: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    object-fit: cover;
+  }
+  
+  .custom-card .card-img-overlay {
+    padding: 0;
+  }
+  
+  .custom-card .card-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 60%; /* Adjust content width as needed */
+    border-radius: 0px;
+    height: 40%; /* Adjust content height as needed */
+    overflow: hidden;
+  }
+  
+  @media (max-width: 992px) {
+    /* Adjust card styles for medium screens */
+    .custom-card {
+      width: 50%;
+      height: 50%;
+    }
+  
+    .custom-card .card-img {
+      width: 50%;
+      height: 50%;
+    }
+  
+    .custom-card .card-img-overlay {
+      position: static;
+    }
+  
+    .custom-card .card-content {
+      position: static;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Adjust card styles for small screens */
+    .custom-card {
+      width: 90%; /* Full width for small screens */
+      height: auto;
+    }
+  
+    .custom-card .card-img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .custom-card .card-img-overlay {
+      position: static;
+    }
+  
+    .custom-card .card-content {
+      position: static;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+  }
+  

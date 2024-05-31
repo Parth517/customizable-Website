@@ -1,0 +1,54 @@
+.newContain {
+  padding: 0;
+}
+
+.newContain.container {
+  padding: 0;
+  margin-left: 150px;
+}
+
+.section2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftCol {
+  text-align: left;
+}
+
+.rightCol {
+  text-align: left;
+  color: gray;
+}
+
+.h5Container {
+  display: flex;
+  gap: 250px; /* Adjust the gap as needed */
+}
+
+.head1 {
+  font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L",
+    P052, Sylfaen, serif;
+  font-weight: bold;
+}
+
+.head2 {
+  font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L",
+    P052, Sylfaen, serif;
+  font-weight: bold;
+  color: orange;
+}
+
+/* New styles for h3 and h5 */
+.h5Container div {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+}
+
+/* Target only the h3 elements with class "newHead" */
+h3.newHead {
+  color: orange !important;
+}

@@ -1,0 +1,38 @@
+.newContain {
+    display: flex;
+    justify-content: center;
+  }
+  .newContain.container {
+    padding: 0;
+    margin-left: 80px !important;
+}
+
+.heading{
+  font-family: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+  font-weight: normal;
+}
+
+.texts{
+  color:gray
+}
+
+.section1{
+  display:inline !important;
+}
+
+
+.icon{
+  
+}
+.check {
+  color: orange;
+  font-size:40px
+}
+.star {
+  color: orange;
+  font-size:40px
+}
+.stack {
+  color: orange;
+  font-size:40px
+}
