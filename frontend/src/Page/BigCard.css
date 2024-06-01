@@ -3,13 +3,16 @@
     align-items: center;
     margin:10px 40px;
     border-style: none;
-    background-color:#ffb347;
+    background-color: #fffcf9;
     transition: transform 0.3s ease-in-out
 }
 .big-card:hover {
     transform: translateY(-10px);
 }
-
+.big-card-title.card-title.h5 {
+    font-size: 2.5rem;
+    color:orange;
+}
 .big-card .big-card-image-column {
     display: flex;
     align-items: center;
@@ -20,9 +23,12 @@
     width: 100%;
     height: auto;
 }
+p.card-text {
+    color: gray;
+}
 
 .big-card .big-card-text-column {
     padding: 1rem; 
     color:white;
-    font-family: 'Roboto'
+    font-family: 'Domain'
 }

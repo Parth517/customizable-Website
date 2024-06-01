@@ -27,7 +27,7 @@ const CardDisplayPage = () => {
             <Card text="white" className="custom-card" key={card._id || index}> {/* Use card._id if available, otherwise use index as fallback */}
               <Card.Img src={card.image} className="card-img" alt="Background" />
               <Card.ImgOverlay className="d-flex flex-column justify-content-end p-0">
-                <Card.Body className="card-content bg-white text-dark p-3">
+                <Card.Body className="card-content text-dark p-3">
                   <Card.Title>{card.title}</Card.Title>
                   <Card.Text>{card.content}</Card.Text>
                 </Card.Body>

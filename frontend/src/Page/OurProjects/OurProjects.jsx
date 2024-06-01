@@ -7,7 +7,7 @@ const OurProjects = () => {
       <br />
       <br />
       <br />
-      <Col md={12} className="mainpad">
+      <Col md={12}>
         <Card className="card1">
           <h4 className="ourhead1">WHAT WE HAVE DONE</h4>
           <h2 className="ourhead2">Our Projects</h2>

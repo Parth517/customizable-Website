@@ -13,7 +13,7 @@ const MainPags = () => {
   return (
     <>
     <CarousalPage />
-      <BigCard />
+     <BigCard />
       <Comp />
       <NewPage />
       <CardDisplayPage />

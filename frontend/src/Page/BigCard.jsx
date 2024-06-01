@@ -15,7 +15,7 @@ const BigCard = () => {
           </Col>
           <Col md={7} className="big-card-text-column">
             <Card.Body>
-              <Card.Title>Big Card Title</Card.Title>
+              <Card.Title className="big-card-title">Big Card Title</Card.Title>
               <Card.Text>
                 This is the content of the big card. It has an image on the left
                 and text on the right.

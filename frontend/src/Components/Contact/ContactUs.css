@@ -1,0 +1,32 @@
+.contact-form {
+    background-color: #e6e3e3; 
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .contact-card {
+    border-left: 5px solid #007bff;
+    border-rigth:none;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+
+  .contact-card:first-child {
+    margin-bottom: 20px; 
+  }
+
+  .contact-card:not(:last-child) {
+    border-right: none; 
+  }
+
+  a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover{
+    color:blue;
+    background-color: transparent;
+    text-decoration: border;
+  }

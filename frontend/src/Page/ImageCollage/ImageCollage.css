@@ -11,9 +11,12 @@
     max-width: 700px;
     margin-left: 180px;
     margin-bottom:-150px;
-    
+    transition: transform 0.3s ease-in-out
+
   }
-  
+  .collage-container:hover {
+    transform: translateY(-10px);
+  }
   .collage-item {
     position: relative;
     overflow: hidden;

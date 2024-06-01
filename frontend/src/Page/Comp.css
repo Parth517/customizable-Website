@@ -6,6 +6,12 @@
   border-radius: 5px;
   margin: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fffcf9;
+  transition: transform 0.3s ease-in-out
+}
+
+.content-card:hover {
+  transform: translateY(-10px);
 }
 
 .content-card .text-column {
@@ -36,4 +42,28 @@
 
 .content-card .content-image {
   border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .content-card {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+  }
+  
+  .content-card .text-column h3 {
+    font-size: 1.2rem; /* Decrease heading font size for smaller screens */
+  }
+  
+  .content-card .text-column p {
+    font-size: 0.9rem; /* Decrease paragraph font size for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .content-card .text-column h3 {
+    font-size: 1rem; /* Further decrease heading font size for even smaller screens */
+  }
+  
+  .content-card .text-column p {
+    font-size: 0.8rem; /* Further decrease paragraph font size for even smaller screens */
+  }
 }
