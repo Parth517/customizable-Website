@@ -61,7 +61,7 @@ const FirstAdPage = () => {
                   <h5>Screen Placed</h5>
                 </div>
                 <div>
-                  <Counter end="1000" duration="2" />
+                  <Counter end="1000" duration="1" />
                   <h5>People Reached</h5>
                 </div>
               </div>

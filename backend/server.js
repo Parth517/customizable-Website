@@ -18,6 +18,9 @@ import deleteSectionRoutes from './routes/deleteSectionRoutes.js';
 import deleteImageRoutes from './routes/DeleteImageRoutes.js';
 import editAdRoutes from './routes/editAdRoute.js';
 import adRoutes from './routes/adRoutes.js';
+import bgCard from './routes/bgCardRoutes.js';
+import editBgCardRoutes from './routes/editBgCardRoutes.js';
+import counterRoutes from './routes/counterRoutes.js'
 
 dotenv.config();
 
@@ -44,6 +47,10 @@ app.use('/api/section',sectionRoutes);
 
 app.use('/api/text',adRoutes);
 
+app.use('/api/bgCard',bgCard);
+
+app.use('/api/counter',counterRoutes);
+
 app.use('/api/add-images',addImagesRoutes);
 
 app.use('/api/add-section',addSectionRoutes);
@@ -63,6 +70,8 @@ app.use('/api/delete-section', deleteSectionRoutes);
 app.use('/api/delete-images', deleteImageRoutes);
 
 app.use('/api/edit-text', editAdRoutes);
+
+app.use('/api/edit-bgCard', editBgCardRoutes);
 
 
 app.use((req, res, next) => {
