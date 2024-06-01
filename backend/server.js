@@ -20,7 +20,10 @@ import editAdRoutes from './routes/editAdRoute.js';
 import adRoutes from './routes/adRoutes.js';
 import bgCard from './routes/bgCardRoutes.js';
 import editBgCardRoutes from './routes/editBgCardRoutes.js';
-import counterRoutes from './routes/counterRoutes.js'
+import counterRoutes from './routes/counterRoutes.js';
+import projectRoutes from './routes/projectRoutes.js';
+import editProjectRoutes from './routes/editProjectRoutes.js'
+import newCardRoutes from "./routes/newCardRoutes.js"
 
 dotenv.config();
 
@@ -51,6 +54,10 @@ app.use('/api/bgCard',bgCard);
 
 app.use('/api/counter',counterRoutes);
 
+app.use('/api/project',projectRoutes);
+
+app.use('/api/newCard',newCardRoutes);
+
 app.use('/api/add-images',addImagesRoutes);
 
 app.use('/api/add-section',addSectionRoutes);
@@ -72,6 +79,7 @@ app.use('/api/delete-images', deleteImageRoutes);
 app.use('/api/edit-text', editAdRoutes);
 
 app.use('/api/edit-bgCard', editBgCardRoutes);
+app.use('/api/edit-project', editProjectRoutes);
 
 
 app.use((req, res, next) => {
